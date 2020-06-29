@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;models/feed&quot; | rss-reader</title>
-	<meta name="description" content="Documentation for rss-reader">
+	<title>&quot;services/daemon&quot; | RSS Reader Backend - v0.1.0</title>
+	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">rss-reader</a>
+					<a href="../index.html" class="title">RSS Reader Backend - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_models_feed_.html">&quot;models/feed&quot;</a>
+					<a href="_services_daemon_.html">&quot;services/daemon&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;models/feed&quot;</h1>
+			<h1>Module &quot;services/daemon&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,10 +69,14 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Feed Model Definition</p>
+						<p>The Daemon service is responsible for the homonym Foxx Microservice,
+						which is used to repeatedly fetch RSS Feeds and check for updates.</p>
 					</div>
-					<p>This Model exports the <a href="_models_modelbuilder_.html">default</a> operations
-					extending it with <a href="_models_feed_.html#view"><code>view</code></a> operation.</p>
+					<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+						<h3>Examples:</h3>
+					</a>
+					<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feed: Document&lt;Repo.Feed&gt; = Feed.save(feedBody);
+Daemon.createJob(feed);</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -82,13 +86,15 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_models_feed_.html#defaultoperations" class="tsd-kind-icon">default<wbr>Operations</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_services_daemon_.html#mount" class="tsd-kind-icon">MOUNT</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_services_daemon_.html#script" class="tsd-kind-icon">SCRIPT</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_models_feed_.html#view" class="tsd-kind-icon">view</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_daemon_.html#createjob" class="tsd-kind-icon">create<wbr>Job</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_daemon_.html#getservicemetadata" class="tsd-kind-icon">get<wbr>Service<wbr>Metadata</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,79 +103,74 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="defaultoperations" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Operations</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Operations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a><span class="tsd-signature-symbol">; </span>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span><span class="tsd-signature-symbol">; </span>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span><span class="tsd-signature-symbol">; </span>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span><span class="tsd-signature-symbol">; </span>findOne<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span><span class="tsd-signature-symbol">; </span>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span><span class="tsd-signature-symbol">; </span>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = modelBuilder&lt;Repo.Feed&gt;(Feed.collection)</span></div>
+					<a name="mount" class="tsd-anchor"></a>
+					<h3>MOUNT</h3>
+					<div class="tsd-signature tsd-kind-icon">MOUNT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/models/feed.ts#L20">models/feed.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/daemon.ts#L18">services/daemon.ts:18</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>find<wbr>One<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span></h5>
-							</li>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="script" class="tsd-anchor"></a>
+					<h3>SCRIPT</h3>
+					<div class="tsd-signature tsd-kind-icon">SCRIPT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/daemon.ts#L18">services/daemon.ts:18</a></li>
 						</ul>
-					</div>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="view" class="tsd-anchor"></a>
-					<h3>view</h3>
+					<a name="createjob" class="tsd-anchor"></a>
+					<h3>create<wbr>Job</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">view<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Job<span class="tsd-signature-symbol">(</span>feed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/models/feed.ts#L33">models/feed.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/daemon.ts#L34">services/daemon.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Given a Feed&#39;s id and optional query parameters,
-									returns a Feed with its relationships.</p>
+									<p>Given a <a href="_repository_collections_feed_.html">Feed</a>,
+									pushes a job into Foxx Queue to repeatedly fetch the Feed.</p>
 								</div>
-								<p><strong>Example:</strong></p>
-								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feedView = <span class="hljs-keyword">await</span> Feed.view(feedId, <span class="hljs-number">20</span>, <span class="hljs-number">10</span>);
-res.json(Serializer.serialize(<span class="hljs-string">&#x27;feeds&#x27;</span>, feedView));</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>id: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> limit: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 10</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<h5>feed: <span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getservicemetadata" class="tsd-anchor"></a>
+					<h3>get<wbr>Service<wbr>Metadata</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Service<wbr>Metadata<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Metadata</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/daemon.ts#L25">services/daemon.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Metadata</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>metadata about the <code>Daemon</code> Foxx Service.</p>
 						</li>
 					</ul>
 				</section>
@@ -196,7 +197,7 @@ res.json(Serializer.serialize(<span class="hljs-string">&#x27;feeds&#x27;</span>
 					<li class=" tsd-kind-module">
 						<a href="_models_category_.html">&quot;models/category&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_models_feed_.html">&quot;models/feed&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -244,7 +245,7 @@ res.json(Serializer.serialize(<span class="hljs-string">&#x27;feeds&#x27;</span>
 					<li class=" tsd-kind-module">
 						<a href="_serializers_item_.html">&quot;serializers/item&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_services_daemon_.html">&quot;services/daemon&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -258,10 +259,16 @@ res.json(Serializer.serialize(<span class="hljs-string">&#x27;feeds&#x27;</span>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_feed_.html#defaultoperations" class="tsd-kind-icon">default<wbr>Operations</a>
+						<a href="_services_daemon_.html#mount" class="tsd-kind-icon">MOUNT</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_daemon_.html#script" class="tsd-kind-icon">SCRIPT</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_models_feed_.html#view" class="tsd-kind-icon">view</a>
+						<a href="_services_daemon_.html#createjob" class="tsd-kind-icon">create<wbr>Job</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_daemon_.html#getservicemetadata" class="tsd-kind-icon">get<wbr>Service<wbr>Metadata</a>
 					</li>
 				</ul>
 			</nav>

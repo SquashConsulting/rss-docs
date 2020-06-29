@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;repository/collections/feed&quot; | rss-reader</title>
-	<meta name="description" content="Documentation for rss-reader">
+	<title>&quot;services/parser&quot; | RSS Reader Backend - v0.1.0</title>
+	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">rss-reader</a>
+					<a href="../index.html" class="title">RSS Reader Backend - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_repository_collections_feed_.html">&quot;repository/collections/feed&quot;</a>
+					<a href="_services_parser_.html">&quot;services/parser&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;repository/collections/feed&quot;</h1>
+			<h1>Module &quot;services/parser&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Category Collection Definition</p>
+						<p>The Parser service is responsible for RSS Feed parsing.</p>
 					</div>
 				</div>
 			</section>
@@ -80,15 +80,14 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#collection" class="tsd-kind-icon">collection</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_services_parser_.html#parser" class="tsd-kind-icon">PARSER</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Object literals</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_parser_.html#getnewitems" class="tsd-kind-icon">get<wbr>New<wbr>Items</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_parser_.html#parseurl" class="tsd-kind-icon">parseURL</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,85 +96,84 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="collection" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> collection</h3>
-					<div class="tsd-signature tsd-kind-icon">collection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = DB.collection(name)</span></div>
+					<a name="parser" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> PARSER</h3>
+					<div class="tsd-signature tsd-kind-icon">PARSER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Parser</span><span class="tsd-signature-symbol"> = new Parser()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L13">repository/collections/feed.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/parser.ts#L10">services/parser.ts:10</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"feeds"</span><span class="tsd-signature-symbol"> = &quot;feeds&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L12">repository/collections/feed.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="schema" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> schema</h3>
-					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> = joi.object({link: joi.string().required(),title: joi.string().optional(),}).required()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L25">repository/collections/feed.ts:25</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<ul>
-								<li><code>link</code> - <code>String</code> [required]</li>
-								<li><code>title</code> - <code>String</code> [optional]</li>
-							</ul>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Object literals</h2>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-					<a name="index" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> index</h3>
-					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L15">repository/collections/feed.ts:15</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="index.fields" class="tsd-anchor"></a>
-						<h3>fields</h3>
-						<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;link&#x27;]</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L18">repository/collections/feed.ts:18</a></li>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getnewitems" class="tsd-anchor"></a>
+					<h3>get<wbr>New<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>New<wbr>Items<span class="tsd-signature-symbol">(</span>feed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/parser.ts#L27">services/parser.ts:27</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given a <a href="_repository_collections_feed_.html">Feed</a>,
+										tries to fetch new RSS Feed Items, check the latest saved item,
+									and return the newly updated items.</p>
+								</div>
+								<p><strong>Example:</strong></p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feed: Document&lt;Repo.Feed&gt; = <span class="hljs-keyword">await</span> Feed.get(feedId);
+<span class="hljs-keyword">const</span> newItems: Repo.Item[] = <span class="hljs-keyword">await</span> Parser.getNewItems(feed);
+
+Item.create(newItems, feed._id);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>feed: <span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
 							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="index.type" class="tsd-anchor"></a>
-						<h3>type</h3>
-						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hash"</span><span class="tsd-signature-symbol"> = &quot;hash&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L16">repository/collections/feed.ts:16</a></li>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="parseurl" class="tsd-anchor"></a>
+					<h3>parseURL</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">parseURL<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Output</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/services/parser.ts#L56">services/parser.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Given a url to an RSS Feed,
+									parses the feed and returns in a standardized form.</p>
+								</div>
+								<p><strong>Example:</strong></p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feed = req.body.feed;
+<span class="hljs-keyword">const</span> parsedFeed: Parser.Output = <span class="hljs-keyword">await</span> Parser.parseURL(feed.link);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="index.unique" class="tsd-anchor"></a>
-						<h3>unique</h3>
-						<div class="tsd-signature tsd-kind-icon">unique<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> = true</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L17">repository/collections/feed.ts:17</a></li>
-							</ul>
-						</aside>
-					</section>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Output</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -212,7 +210,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_repository_collections_category_.html">&quot;repository/collections/category&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_repository_collections_feed_.html">&quot;repository/collections/feed&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -251,7 +249,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_services_daemon_.html">&quot;services/daemon&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_services_parser_.html">&quot;services/parser&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -262,16 +260,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_feed_.html#collection" class="tsd-kind-icon">collection</a>
+						<a href="_services_parser_.html#parser" class="tsd-kind-icon">PARSER</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_feed_.html#name" class="tsd-kind-icon">name</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_parser_.html#getnewitems" class="tsd-kind-icon">get<wbr>New<wbr>Items</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_feed_.html#schema" class="tsd-kind-icon">schema</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_feed_.html#index" class="tsd-kind-icon">index</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_parser_.html#parseurl" class="tsd-kind-icon">parseURL</a>
 					</li>
 				</ul>
 			</nav>

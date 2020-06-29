@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;repository/collections/item&quot; | rss-reader</title>
-	<meta name="description" content="Documentation for rss-reader">
+	<title>&quot;repository/collections/feed&quot; | RSS Reader Backend - v0.1.0</title>
+	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">rss-reader</a>
+					<a href="../index.html" class="title">RSS Reader Backend - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_repository_collections_item_.html">&quot;repository/collections/item&quot;</a>
+					<a href="_repository_collections_feed_.html">&quot;repository/collections/feed&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;repository/collections/item&quot;</h1>
+			<h1>Module &quot;repository/collections/feed&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Feed Item Collection Definition</p>
+						<p>Category Collection Definition</p>
 					</div>
 				</div>
 			</section>
@@ -80,15 +80,15 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_item_.html#collection" class="tsd-kind-icon">collection</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_item_.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_item_.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#collection" class="tsd-kind-icon">collection</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#schema" class="tsd-kind-icon">schema</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_item_.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_collections_feed_.html#index" class="tsd-kind-icon">index</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,32 +99,40 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="collection" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> collection</h3>
-					<div class="tsd-signature tsd-kind-icon">collection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = DB.collection(name)</span></div>
+					<div class="tsd-signature tsd-kind-icon">collection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = DB.collection(name)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L13">repository/collections/item.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L13">repository/collections/feed.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="name" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"items"</span><span class="tsd-signature-symbol"> = &quot;items&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"feeds"</span><span class="tsd-signature-symbol"> = &quot;feeds&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L12">repository/collections/item.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L12">repository/collections/feed.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="schema" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> schema</h3>
-					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> = joi.object({title: joi.string().required(),description: joi.string().required(),}).required()</span></div>
+					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> = joi.object({link: joi.string().required(),title: joi.string().optional(),}).required()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L15">repository/collections/item.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L25">repository/collections/feed.ts:25</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<ul>
+								<li><code>link</code> - <code>String</code> [required]</li>
+								<li><code>title</code> - <code>String</code> [optional]</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
@@ -135,16 +143,16 @@
 					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L14">repository/collections/item.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L15">repository/collections/feed.ts:15</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="index.fields" class="tsd-anchor"></a>
 						<h3>fields</h3>
-						<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;guid&#x27;]</span></div>
+						<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;link&#x27;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L14">repository/collections/item.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L18">repository/collections/feed.ts:18</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -154,7 +162,17 @@
 						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hash"</span><span class="tsd-signature-symbol"> = &quot;hash&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/item.ts#L14">repository/collections/item.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L16">repository/collections/feed.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="index.unique" class="tsd-anchor"></a>
+						<h3>unique</h3>
+						<div class="tsd-signature tsd-kind-icon">unique<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> = true</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/repository/collections/feed.ts#L17">repository/collections/feed.ts:17</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -194,10 +212,10 @@
 					<li class=" tsd-kind-module">
 						<a href="_repository_collections_category_.html">&quot;repository/collections/category&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_repository_collections_feed_.html">&quot;repository/collections/feed&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_repository_collections_item_.html">&quot;repository/collections/item&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -244,16 +262,16 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_item_.html#collection" class="tsd-kind-icon">collection</a>
+						<a href="_repository_collections_feed_.html#collection" class="tsd-kind-icon">collection</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_item_.html#name" class="tsd-kind-icon">name</a>
+						<a href="_repository_collections_feed_.html#name" class="tsd-kind-icon">name</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_item_.html#schema" class="tsd-kind-icon">schema</a>
+						<a href="_repository_collections_feed_.html#schema" class="tsd-kind-icon">schema</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_collections_item_.html#index" class="tsd-kind-icon">index</a>
+						<a href="_repository_collections_feed_.html#index" class="tsd-kind-icon">index</a>
 					</li>
 				</ul>
 			</nav>

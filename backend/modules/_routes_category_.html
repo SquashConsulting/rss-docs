@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;routes/feed&quot; | rss-reader</title>
-	<meta name="description" content="Documentation for rss-reader">
+	<title>&quot;routes/category&quot; | RSS Reader Backend - v0.1.0</title>
+	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">rss-reader</a>
+					<a href="../index.html" class="title">RSS Reader Backend - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_routes_feed_.html">&quot;routes/feed&quot;</a>
+					<a href="_routes_category_.html">&quot;routes/category&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;routes/feed&quot;</h1>
+			<h1>Module &quot;routes/category&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p><code>/feeds</code> Router Initilzer</p>
+						<p><code>/categories</code> Router Initilzer</p>
 					</div>
 				</div>
 			</section>
@@ -80,14 +80,7 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_routes_feed_.html#feedrouter" class="tsd-kind-icon">Feed<wbr>Router</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Object literals</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_routes_feed_.html#paramschema" class="tsd-kind-icon">param<wbr>Schema</a></li>
-								<li class="tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported"><a href="_routes_feed_.html#queryschema" class="tsd-kind-icon">query<wbr>Schema</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_routes_category_.html#categoryrouter" class="tsd-kind-icon">Category<wbr>Router</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,91 +89,25 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="feedrouter" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> Feed<wbr>Router</h3>
-					<div class="tsd-signature tsd-kind-icon">Feed<wbr>Router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Router</span><span class="tsd-signature-symbol"> = Router()</span></div>
+					<a name="categoryrouter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Category<wbr>Router</h3>
+					<div class="tsd-signature tsd-kind-icon">Category<wbr>Router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Router</span><span class="tsd-signature-symbol"> = Router()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L27">routes/feed.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/category.ts#L19">routes/category.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>FeedRouter defines three routes:</p>
-							<ul>
-								<li>GET <code>/:id</code> - Returns <a href="_serializers_feed_.html#serializeroptions">Feed Serializer</a><ul>
-										<li>Params - <a href="_routes_feed_.html#paramschema">Param Schema</a></li>
-										<li>Query - <a href="_routes_feed_.html#queryschema">Query Schema</a></li>
-									</ul>
-								</li>
-							</ul>
+							<p>CategoryRouter defines the following routes:</p>
 						</div>
 						<ul>
-							<li><p>POST <code>/</code> - Adds a new RSS Feed</p>
-								<ul>
-									<li>Body: <a href="_repository_collections_feed_.html#schema">Feed Schema</a></li>
-								</ul>
-							</li>
-							<li><p>PUT <code>/:id/parse</code> - Fetches Latest RSS Changes and Updates New Items</p>
-								<ul>
-									<li>Params - <a href="_routes_feed_.html#paramschema">Param Schema</a></li>
+							<li>POST <code>/</code> - Adds a new RSS Category<ul>
+									<li>Body: <a href="_repository_collections_category_.html#schema">Category Schema</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Object literals</h2>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-					<a name="paramschema" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> param<wbr>Schema</h3>
-					<div class="tsd-signature tsd-kind-icon">param<wbr>Schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L29">routes/feed.ts:29</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="paramschema.id" class="tsd-anchor"></a>
-						<h3>id</h3>
-						<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StringSchema</span><span class="tsd-signature-symbol"> = joi.string().required()</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L30">routes/feed.ts:30</a></li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-					<a name="queryschema" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> query<wbr>Schema</h3>
-					<div class="tsd-signature tsd-kind-icon">query<wbr>Schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L33">routes/feed.ts:33</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="queryschema.limit" class="tsd-anchor"></a>
-						<h3>limit</h3>
-						<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NumberSchema</span><span class="tsd-signature-symbol"> = joi.number().optional().default(10)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L34">routes/feed.ts:34</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="queryschema.offset" class="tsd-anchor"></a>
-						<h3>offset</h3>
-						<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NumberSchema</span><span class="tsd-signature-symbol"> = joi.number().optional().default(0)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/routes/feed.ts#L35">routes/feed.ts:35</a></li>
-							</ul>
-						</aside>
-					</section>
 				</section>
 			</section>
 		</div>
@@ -235,10 +162,10 @@
 					<li class=" tsd-kind-module">
 						<a href="_repository_utils_createcollection_.html">&quot;repository/utils/create<wbr>Collection&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_routes_category_.html">&quot;routes/category&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_routes_feed_.html">&quot;routes/feed&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -267,13 +194,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="_routes_feed_.html#feedrouter" class="tsd-kind-icon">Feed<wbr>Router</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_routes_feed_.html#paramschema" class="tsd-kind-icon">param<wbr>Schema</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_routes_feed_.html#queryschema" class="tsd-kind-icon">query<wbr>Schema</a>
+						<a href="_routes_category_.html#categoryrouter" class="tsd-kind-icon">Category<wbr>Router</a>
 					</li>
 				</ul>
 			</nav>

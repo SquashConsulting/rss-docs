@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;models/modelBuilder&quot; | rss-reader</title>
-	<meta name="description" content="Documentation for rss-reader">
+	<title>&quot;models/item&quot; | RSS Reader Backend - v0.1.0</title>
+	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">rss-reader</a>
+					<a href="../index.html" class="title">RSS Reader Backend - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_models_modelbuilder_.html">&quot;models/modelBuilder&quot;</a>
+					<a href="_models_item_.html">&quot;models/item&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;models/modelBuilder&quot;</h1>
+			<h1>Module &quot;models/item&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,9 +69,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Model Builder
-						This module provides basic CRUD operations necessary for a ArangoDB Model.</p>
+						<p>Feed Item Model Definition</p>
 					</div>
+					<p>This Model exports the <a href="_models_modelbuilder_.html">default</a> operations
+					overriding the <a href="_models_item_.html#create-1">create</a> action</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -79,74 +80,93 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_models_item_.html#defaultoperations" class="tsd-kind-icon">default<wbr>Operations</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported"><a href="_models_modelbuilder_.html#modelbuilder" class="tsd-kind-icon">model<wbr>Builder</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_models_item_.html#create-1" class="tsd-kind-icon">create</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="defaultoperations" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Operations</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Operations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a><span class="tsd-signature-symbol">; </span>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span><span class="tsd-signature-symbol">; </span>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span><span class="tsd-signature-symbol">; </span>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span><span class="tsd-signature-symbol">; </span>findOne<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span><span class="tsd-signature-symbol">; </span>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span><span class="tsd-signature-symbol">; </span>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = modelBuilder&lt;Repo.Item&gt;(Item.collection)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/models/item.ts#L14">models/item.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>find<wbr>One<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-					<a name="modelbuilder" class="tsd-anchor"></a>
-					<h3>model<wbr>Builder</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">model<wbr>Builder&lt;T&gt;<span class="tsd-signature-symbol">(</span>Collection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">EdgeCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a><span class="tsd-signature-symbol">; </span>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span><span class="tsd-signature-symbol">; </span>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span><span class="tsd-signature-symbol">; </span>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span><span class="tsd-signature-symbol">; </span>findOne<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span><span class="tsd-signature-symbol">; </span>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span><span class="tsd-signature-symbol">; </span>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span><span class="tsd-signature-symbol"> }</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="create-1" class="tsd-anchor"></a>
+					<h3>create</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span>, feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/models/modelBuilder.ts#L27">models/modelBuilder.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/86b54eb/src/models/item.ts#L27">models/item.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Given a <code>DocumentCollection</code> and <code>Repo</code> type,
-									returns an object with basic CRUD operations for the given Model.</p>
+									<p>Given an array of Feed Items,
+										saves them in the database and creates a <code>HasItems</code>
+									relationship between Feed and Items.</p>
 								</div>
 								<p><strong>Example:</strong></p>
-								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> defaultOperations = modelBuilder&lt;Repo.Feed&gt;(Feed.Collection);
-<span class="hljs-keyword">const</span> feed = <span class="hljs-keyword">await</span> defaultOperations.get(feedId);</code></pre>
+								<pre><code class="language-typescript">Items.create(items, feedId);</code></pre>
 							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>Collection: <span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">EdgeCollection</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>items: <span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>feedId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a><span class="tsd-signature-symbol">; </span>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span><span class="tsd-signature-symbol">; </span>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span><span class="tsd-signature-symbol">; </span>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span><span class="tsd-signature-symbol">; </span>findOne<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span><span class="tsd-signature-symbol">; </span>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span><span class="tsd-signature-symbol">; </span>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span><span class="tsd-signature-symbol"> }</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>create<span class="tsd-signature-symbol">: </span><a href="_models_item_.html#create-1" class="tsd-signature-type">create</a></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>edit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">edit</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>executeAQL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">executeAQL</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>find<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">find</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>find<wbr>One<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">findOne</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">get</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>remove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">remove</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -176,10 +196,10 @@
 					<li class=" tsd-kind-module">
 						<a href="_models_feed_.html">&quot;models/feed&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_models_item_.html">&quot;models/item&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_models_modelbuilder_.html">&quot;models/model<wbr>Builder&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -234,8 +254,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_models_modelbuilder_.html#modelbuilder" class="tsd-kind-icon">model<wbr>Builder</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_models_item_.html#defaultoperations" class="tsd-kind-icon">default<wbr>Operations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_models_item_.html#create-1" class="tsd-kind-icon">create</a>
 					</li>
 				</ul>
 			</nav>
