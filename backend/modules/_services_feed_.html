@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;repository/utils/createCollection&quot; | RSS Reader Backend - v0.1.0</title>
+	<title>&quot;services/feed&quot; | RSS Reader Backend - v0.1.0</title>
 	<meta name="description" content="Documentation for RSS Reader Backend - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_repository_utils_createcollection_.html">&quot;repository/utils/createCollection&quot;</a>
+					<a href="_services_feed_.html">&quot;services/feed&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;repository/utils/createCollection&quot;</h1>
+			<h1>Module &quot;services/feed&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Collection Creator</p>
+						<p>Feed Service</p>
 					</div>
 				</div>
 			</section>
@@ -80,7 +80,8 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_repository_utils_createcollection_.html#createcollection" class="tsd-kind-icon">create<wbr>Collection</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_feed_.html#createfeed" class="tsd-kind-icon">create<wbr>Feed</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_services_feed_.html#updateitems" class="tsd-kind-icon">update<wbr>Items</a></li>
 							</ul>
 						</section>
 					</div>
@@ -89,68 +90,73 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="createcollection" class="tsd-anchor"></a>
-					<h3>create<wbr>Collection</h3>
+					<a name="createfeed" class="tsd-anchor"></a>
+					<h3>create<wbr>Feed</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Collection<span class="tsd-signature-symbol">(</span>DB<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Database</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"edge"</span>, isSystem<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgeCollection</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Collection<span class="tsd-signature-symbol">(</span>DB<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Database</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"document"</span>, isSystem<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Feed<span class="tsd-signature-symbol">(</span>feed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>link<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/6a1af3e/src/repository/utils/createCollection.ts#L14">home/rasjonell/Programs/SquashReader/backend/src/repository/utils/createCollection.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/6a1af3e/src/services/feed.ts#L32">home/rasjonell/Programs/SquashReader/backend/src/services/feed.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates an ArangoDB Edge Collection if it doesn&#39;t exist</p>
+									<p>Given a Feed URL and (optionally) a title, parses the RSS Feed
+									and inserts in the database.</p>
 								</div>
+								<p><strong>Example:</strong></p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> feed: Document&lt;Repo.Feed&gt; = <span class="hljs-keyword">await</span> FeedService.createFeed(req.body.feed);
+Daemon.createJob(feed);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>DB: <span class="tsd-signature-type">Database</span></h5>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>type: <span class="tsd-signature-type">"edge"</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isSystem: <span class="tsd-signature-type">boolean</span></h5>
+									<h5>feed: <span class="tsd-signature-symbol">{ </span>link<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>link<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EdgeCollection</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Feed</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="updateitems" class="tsd-anchor"></a>
+					<h3>update<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Items<span class="tsd-signature-symbol">(</span>feedId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/6a1af3e/src/repository/utils/createCollection.ts#L24">home/rasjonell/Programs/SquashReader/backend/src/repository/utils/createCollection.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/SquashConsulting/rss-reader-backend/blob/6a1af3e/src/services/feed.ts#L69">home/rasjonell/Programs/SquashReader/backend/src/services/feed.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates an ArangoDB Document Collection if it doesn&#39;t exist</p>
+									<p>Given a Feed ID, parses the feed and updates latest RSS Items.</p>
 								</div>
+								<p><strong>Example:</strong></p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> newItems: Repo.Item[] = <span class="hljs-keyword">await</span> FeedService.updateItems(req.params.id);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`You have <span class="hljs-subst">${newItems.length}</span> new item(s)`</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>DB: <span class="tsd-signature-type">Database</span></h5>
-								</li>
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>type: <span class="tsd-signature-type">"document"</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isSystem: <span class="tsd-signature-type">boolean</span></h5>
+									<h5>feedId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DocumentCollection</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -163,14 +169,17 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_repository_utils_createcollection_.html">&quot;repository/utils/create<wbr>Collection&quot;</a>
+						<a href="_services_feed_.html">&quot;services/feed&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_repository_utils_createcollection_.html#createcollection" class="tsd-kind-icon">create<wbr>Collection</a>
+						<a href="_services_feed_.html#createfeed" class="tsd-kind-icon">create<wbr>Feed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_services_feed_.html#updateitems" class="tsd-kind-icon">update<wbr>Items</a>
 					</li>
 				</ul>
 			</nav>
